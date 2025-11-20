@@ -15,17 +15,17 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(+2*Time.deltaTime, 0, 0);
+            transform.position += new Vector3(+15*Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(-2 * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(-15* Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.W))
         {
             if(grounded == true)
             {
-                transform.position += new Vector3(0, +23 * Time.deltaTime, 0);
+                transform.position += new Vector3(0, +100 * Time.deltaTime, 0);
                 grounded = false; 
             }
         }
@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        print("collision");
         if(collision.collider.tag == "ground")
         {
             grounded = true; 
