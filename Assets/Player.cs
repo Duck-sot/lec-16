@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private bool grounded = true; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,18 +13,34 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-    
-    void Move()
-    {
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(10f, 0, 0);
+            transform.position += new Vector3(+2*Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= new Vector3(10f, 0, 0);
+            transform.position += new Vector3(-2 * Time.deltaTime, 0, 0);
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            if(grounded == true)
+            {
+                transform.position += new Vector3(0, +23 * Time.deltaTime, 0);
+                grounded = false; 
+            }
+        }
+        
+        
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        print("collision");
+        if(collision.collider.tag == "ground")
+        {
+            grounded = true; 
+        }
+        
     }
 }
+ 
