@@ -4,11 +4,11 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private bool grounded = true; 
-    private Rigidbody2D rb;
+    Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -16,17 +16,17 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(+5*Time.deltaTime, 0, 0);
+            rb.linearVelocityX = 12f;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(-5* Time.deltaTime, 0, 0);
+            rb.linearVelocityX = -12f;
         }
         if (Input.GetKey(KeyCode.W))
         {
-            if(grounded == true)
+            if(grounded)
             {
-                transform.position += new Vector3(0, +100 * Time.deltaTime, 0);
+                rb.linearVelocityY = 16f;
                 grounded = false; 
             }
         }
