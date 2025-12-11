@@ -502,7 +502,7 @@ Rigidbody2D:
   m_Mass: 0.5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.8
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1691,6 +1691,7 @@ GameObject:
   - component: {fileID: 1287984170}
   - component: {fileID: 1287984169}
   - component: {fileID: 1287984168}
+  - component: {fileID: 1287984172}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1835,12 +1836,27 @@ Transform:
   m_GameObject: {fileID: 1287984167}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.17, y: 3.07, z: 0}
+  m_LocalPosition: {x: 29.58, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1287984172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287984167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae9c487c408cea32af253f0c821af67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1
+  wallLeft: 0
+  wallRight: 5
 --- !u!1 &1569712018
 GameObject:
   m_ObjectHideFlags: 0
