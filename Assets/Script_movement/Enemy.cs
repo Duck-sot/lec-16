@@ -1,30 +1,29 @@
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
+
 {
-    public float walkSpeed = 1.0f;      // Walkspeed
-    public float wallLeft = 0.0f;       // Define wallLeft
-    public float wallRight = 5.0f;      // Define wallRight
-    float walkingDirection = 1.0f;
-    Vector2 walkAmount;
-    float originalX; // Original float value
+    public float speed = 2f;
+    private int direction = 1;
+    private Rigidbody2D rb;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        this.originalX = this.transform.position.x;
+        rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-         walkAmount.x = walkingDirection * walkSpeed * Time.deltaTime;
-        if (walkingDirection > 0.0f && transform.position.x >= wallRight) {
-            walkingDirection = -1.0f;
-        } else if (walkingDirection < 0.0f && transform.position.x <= wallLeft) {
-            walkingDirection = 1.0f;
-        }
-        transform.Translate(walkAmount);
+        rb.linearVelocity = new Vector2(direction * speed, rb.linearVelocity.y);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        direction *= -1;
+        FlipSprite();
+    }
+    void FlipSprite()
+    {
+        Vector3 s = transform.localScale;
+        s.x *= -1;
+        transform.localScale = s;
     }
 }

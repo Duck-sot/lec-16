@@ -16,17 +16,17 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            rb.linearVelocityX = 8f;
+            rb.linearVelocityX = 12f;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rb.linearVelocityX = -8f;
+            rb.linearVelocityX = -12f;
         }
         if (Input.GetKey(KeyCode.W))
         {
             if(grounded)
             {
-                rb.linearVelocityY = 12f;
+                rb.linearVelocityY = 16f;
                 grounded = false; 
             }
         }
