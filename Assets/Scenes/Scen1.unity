@@ -1679,6 +1679,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1187092864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187092865}
+  m_Layer: 0
+  m_Name: shoot0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1187092865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187092864}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.434, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1287984171}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1287984167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,10 +1868,11 @@ Transform:
   m_GameObject: {fileID: 1287984167}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.11, y: 3.11, z: 0}
+  m_LocalPosition: {x: 29.12, y: 2.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1187092865}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1287984173
@@ -1856,6 +1888,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  projectilePrefab: {fileID: 757407792066783739, guid: 1d26f82df7ea076488003f88880e5fdc, type: 3}
+  shootPoint: {fileID: 1187092865}
+  shootDelay: 1.5
+  bulletSpeed: 10
 --- !u!58 &1287984174
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1923,6 +1959,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  projectilePrefab: {fileID: 0}
+  shootPoint: {fileID: 0}
+  shootDelay: 1.5
+  bulletSpeed: 10
 --- !u!4 &1555422545
 Transform:
   m_ObjectHideFlags: 0
