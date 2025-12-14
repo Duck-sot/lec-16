@@ -3,12 +3,11 @@ using UnityEngine;
 public class Enemybullet : MonoBehaviour
 {
     public float lifeTime = 5f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int damage = 1;
     void Start()
     {
         Destroy(gameObject, lifeTime);
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -16,12 +15,11 @@ public class Enemybullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (other.CompareTag("Wall"))
+        if (other.CompareTag("ground"))
         {
             Destroy(gameObject);
         }
     }
-
     // Update is called once per frame
     void Update()
     {
