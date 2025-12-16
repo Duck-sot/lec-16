@@ -1,18 +1,18 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyBoss : MonoBehaviour
 {
-    public float speed = 7f;
+    public float speed = 10f;
     private int direction = 1;
     private Rigidbody2D rb;
     public GameObject projectilePrefab;
     public Transform shootPoint;
-    public float shootDelay = 1.5f;
-    public float bulletSpeed = 10f;
+    public float shootDelay = 1f;
+    public float bulletSpeed = 12f;
     private float shootTimer = 0f;
     private bool playerInRange = false;
     private Transform playerTransform;
-    private int hp = 100;
+    private int hp = 500;
 
     void Awake()
     {
