@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
+[SerializeField]
     private bool grounded = true; 
     Rigidbody2D rb;
+    private int hp = 100; 
+    private float timer;
+    private float delay = 5f;  
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -30,7 +34,14 @@ public class Player : MonoBehaviour
                 grounded = false; 
             }
         }
-        
+        if (!grounded)
+        {
+            timer += Time.deltaTime;
+            if (timer > delay)
+            {
+                grounded = true;
+            }
+        }
         
     }
 
